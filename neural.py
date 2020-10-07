@@ -9,7 +9,10 @@ def get_reply():
   randomn = random.randint(0, allleng)
   return(masse[randomn])
   
-def add_phrase(phrase):
-  allsd = 'echo "'+phrase+'">>allfiles.txt'
-  os.system(allsd)
-  return get_reply()
+def add_phrase(phrase, admin):
+  if (admin == true):
+    allsd = 'echo "'+phrase+'">>allfiles.txt'  
+    os.system(allsd)  
+    return get_reply()
+  else:
+    return get_reply()
