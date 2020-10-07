@@ -7,7 +7,7 @@ def get_reply():
   lengths = len(masse)
   allleng = lengths-1
   randomn = random.randint(0, allleng)
-  random = masse[randomn]
+  return(masse[randomn])
   
 def add_phrase(phrase):
   allsd = 'echo "'+phrase+'">>allfiles.txt'
