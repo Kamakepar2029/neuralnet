@@ -5,9 +5,6 @@ import neural
 import subprocess
 import os
 import sys
-reload(sys)
-sys.setdefaultencoding('utf8')
-
 bot = telebot.TeleBot(config.TOKEN)
 
 @bot.message_handler(commands=['start'])
@@ -21,6 +18,6 @@ def lalala(message):
   if (message.text == 'Hello'):
     bot.send_message(message.chat.id, 'Hello Man')
   else:
-    loln = add_phrase(message.text)
+    loln = neural.add_phrase(message.text)
     bot.send_message(message.chat.id, loln)
 bot.polling(none_stop=True)
