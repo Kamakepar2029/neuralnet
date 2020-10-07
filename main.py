@@ -15,9 +15,14 @@ def kolya(message):
 
 @bot.message_handler(content_types=['text'])
 def lalala(message):
+  fullstring = open("admins.txt", "r").read()
   if (message.text == 'Привет'):
     bot.send_message(message.chat.id, 'Привет. Как дела?')
   else:
-    loln = neural.add_phrase(message.text)
-    bot.send_message(message.chat.id, loln)
+    if (str(message.chat.id) in fullstring): 
+      loln = neural.add_phrase(message.text,true)
+      bot.send_message(message.chat.id, loln)
+    else:
+      loln = neural.add_phrase(message.text,false)
+      bot.send_message(message.chat.id, loln)
 bot.polling(none_stop=True)
