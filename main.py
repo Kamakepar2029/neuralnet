@@ -9,14 +9,14 @@ bot = telebot.TeleBot(config.TOKEN)
 
 @bot.message_handler(commands=['start'])
 def kolya(message):
-  bot.send_message(message.chat.id, 'Hello 😊, I am not a bot 🤖.')
-  bot.send_message(message.chat.id, '😌 Ask me everything you want.')
-  bot.send_message(message.chat.id, '❔ I will answer every your question.')
+  bot.send_message(message.chat.id, 'Привет 😊, Я не бот 🤖.')
+  bot.send_message(message.chat.id, '😌 Спроси абсолютно все что угодно. Общайся со мной.')
+  bot.send_message(message.chat.id, '❔ Я отвечу на любой твой вопрос. Иногда мои ответы могут быть не связаны, но это нормально. Я тупой.')
 
 @bot.message_handler(content_types=['text'])
 def lalala(message):
-  if (message.text == 'Hello'):
-    bot.send_message(message.chat.id, 'Hello Man')
+  if (message.text == 'Привет'):
+    bot.send_message(message.chat.id, 'Привет. Как дела?')
   else:
     loln = neural.add_phrase(message.text)
     bot.send_message(message.chat.id, loln)
