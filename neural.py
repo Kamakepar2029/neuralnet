@@ -2,7 +2,7 @@ import os
 import random
 
 def get_reply():
-  alltext = open("allfiles.txt", "w").read()
+  alltext = open("allfiles.txt", "r").read()
   masse = alltext.split('\n')
   lengths = len(masse)
   allleng = lengths-1
