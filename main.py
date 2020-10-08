@@ -20,9 +20,17 @@ def lalala(message):
     bot.send_message(message.chat.id, 'Привет. Как дела?')
   else:
     if (str(message.chat.id) in fullstring): 
-      loln = neural.add_phrase(message.text,true)
-      bot.send_message(message.chat.id, loln)
+      if ('?') in message.text:
+        loln = neural.add_phrase(message.text,True,q)
+        bot.send_message(message.chat.id, loln)
+      else:
+        loln = neural.add_phrase(message.text,True,a)
+        bot.send_message(message.chat.id, loln)
     else:
-      loln = neural.add_phrase(message.text,false)
-      bot.send_message(message.chat.id, loln)
+      if ('?') in message.text:
+        loln = neural.add_phrase(message.text,False,q)
+        bot.send_message(message.chat.id, loln)
+      else:
+        loln = neural.add_phrase(message.text,False,a)
+        bot.send_message(message.chat.id, loln)
 bot.polling(none_stop=True)
