@@ -21,16 +21,20 @@ def lalala(message):
   else:
     if (str(message.chat.id) in fullstring): 
       if ('?') in message.text:
-        loln = neural.add_phrase(message.text,True,q)
+        print('Admin said: '+message.text)
+        loln = neural.add_phrase(message.text,True,'q')
         bot.send_message(message.chat.id, loln)
       else:
-        loln = neural.add_phrase(message.text,True,a)
+        print('Admin said: '+message.text)
+        loln = neural.add_phrase(message.text,True,'a')
         bot.send_message(message.chat.id, loln)
     else:
       if ('?') in message.text:
-        loln = neural.add_phrase(message.text,False,q)
+        print('User said: '+message.text)
+        loln = neural.add_phrase(message.text,False,'q')
         bot.send_message(message.chat.id, loln)
       else:
-        loln = neural.add_phrase(message.text,False,a)
+        print('User said: '+message.text)
+        loln = neural.add_phrase(message.text,False,'a')
         bot.send_message(message.chat.id, loln)
 bot.polling(none_stop=True)
