@@ -18,7 +18,18 @@ def get_que(bonus):
   an = len(answer)
   alleng = an-1
   allleng = le-1
-  if (bonus == 'q'):
+  kile = random.randint(0, 1)
+  if kile == 0:
+    if (bonus == 'q'):
+      bp = 'q'
+    else:
+      bp = 'a'
+  if kile == 1:
+    if (bonus == 'a'):
+      bp = 'a'
+    else:
+      bp = 'q'
+  if (bp == 'q'):
     randomn = random.randint(0, alleng)
     return (answer[randomn])
   else:
