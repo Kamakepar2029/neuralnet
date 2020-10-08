@@ -18,7 +18,7 @@ def get_que(bonus):
   an = len(answer)
   alleng = an-1
   allleng = le-1
-  if (bonus = 'a'):
+  if (bonus = 'q'):
     randomn = random.randint(0, alleng)
     return (answer[randomn])
   else:
@@ -38,7 +38,7 @@ def get_reply():
   return(masse[randomn])
   
 def add_phrase(phrase, admin,bo):
-  if (admin == true):
+  if (admin == True):
     allsd = 'echo "'+phrase+'">>allfiles.txt'  
     os.system(allsd)  
     return get_que(bo)
